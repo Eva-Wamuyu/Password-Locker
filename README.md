@@ -6,22 +6,25 @@ This is a python CLI project meant to help a user store their various account lo
 
 ## Setup Instructions
 Clone the project in your local machine, navigate to the new created folder and run the code
+The steps are as shown.
 ```
 git clone https://github.com/Eva-Wamuyu/Password-Locker
 cd Password-Locker
+chmod +x pass_locker.py
+./pass_locker.py
 
 
 ```
 ## Dependencies
 * unittest
-* PasswordGenerator
+* PasswordGenerator module
 
 
 ## Technologies used
 
 * Python
 
-BDD
+## BDD
 | Behavior                                                               | Input Example                   | Output Example                                                                                                                                                                                      |
 |------------------------------------------------------------------------|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Create Password Locker Account                                         | Username - Eva && Password 1234 | Welcome Eva password locker account created                                                                                                                                                         |
