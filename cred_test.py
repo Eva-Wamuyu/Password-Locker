@@ -1,3 +1,4 @@
+from curses.ascii import CR
 import unittest
 from credentials import Credentials
 class testCreds(unittest.TestCase):
@@ -26,6 +27,25 @@ class testCreds(unittest.TestCase):
     another_acc = Credentials("Tumblr","eve","1234")
     another_acc.add_credential()
     self.assertEqual(len(Credentials.all_accounts),2)
+
+  def test_remove(self):
+    '''
+    Func to test the delete functionality
+    '''
+    another_acc = Credentials("Tumblr","eve","1234")
+    another_acc.add_credential()
+    Credentials.delete_credential('Tumblr')
+    self.assertEqual(len(Credentials.all_accounts),1)
+  
+  def test_search(self):
+    '''
+    Func to test the search function
+    '''
+    another_acc = Credentials("Tumblr","eve","1234")
+    another_acc.add_credential()
+    found_credential = Credentials.search_Acc("Tumblr")
+    self.assertEqual(another_acc == found_credential)
+    
     
 
 if __name__ == "__main__":
