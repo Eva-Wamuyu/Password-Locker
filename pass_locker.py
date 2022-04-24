@@ -1,7 +1,8 @@
-# from dis import dis
-from password_generator import PasswordGenerator
+#!/usr/bin/env python3
 from user import User
 from credentials import Credentials
+from password_generator import PasswordGenerator
+
 
 Random_password = PasswordGenerator()
 
@@ -20,7 +21,7 @@ def add_media(acc_name,acc_user,acc_pass):
   Credentials.add_credential(new_account)
 def display():
   '''
-  Display accounts saved amd their passwords
+  Display accounts saved and their passwords
   '''
   return Credentials.show_all_accounts()
 
@@ -49,11 +50,12 @@ def main():
 
   
     print(f"Hello {userName} PasswordLocker Account created successfully")
+    print("What do You Want to do today?")
 
     while(True):
-      print("What do You Want to do today?")
+      
       print("Use the Shortcodes Below to navigate:")
-      print("\tvc to view credentials, \n\tac to add an account\n\tcn to add an account and have password generated \n\t del to delete an account\n Any other to Exit.")
+      print("\n\tvc to view credentials \n\tac to add an account\n\tcn to add an account and have password generated \n\t del to delete an account\t Any other to Exit.")
 
       short_code = input("Input shortcode\t").lower()
       if short_code == "vc":
@@ -88,7 +90,7 @@ def main():
         acc_user = input("\tUsername:\t")
         acc_pass = Random_password.generate()
         add_media(acc_name,acc_user,acc_pass)
-        print(f"\t{acc_name} Added Successfully")
+        print(f"\t{acc_name}Account Added Successfully")
         print("x"*15)
         
 
