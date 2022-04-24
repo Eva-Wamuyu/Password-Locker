@@ -3,7 +3,7 @@ class Credentials:
   '''
   Holding and creating instances of credentials
   Args:
-  Account and Password
+  Account Usename and Password
   '''
 
   all_accounts = []
@@ -22,6 +22,9 @@ class Credentials:
 
   @classmethod
   def search_Acc(cls,acc):
+    '''
+    Search Func: to be used when deleting an account
+    '''
     for cred in cls.all_accounts:
       if cred.account_name == acc:
         return cred;
@@ -29,6 +32,9 @@ class Credentials:
 
   @classmethod
   def delete_credential(cls, the_name):
+    '''
+    Delete func, calls the search func and executes deletion
+    '''
     get_acc_with_name = cls.search_Acc(the_name)
     if(get_acc_with_name):
      cls.all_accounts.remove(get_acc_with_name)
