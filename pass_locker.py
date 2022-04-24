@@ -55,15 +55,16 @@ def main():
       print("Use the Shortcodes Below to navigate:")
       print("\tvc to view credentials, \n\tac to add an account\n\tcn to add an account and have password generated \n\t del to delete an account\n Any other to Exit.")
 
-      short_code = input(" Code>>>\t").lower()
+      short_code = input("Input shortcode\t").lower()
       if short_code == "vc":
         print("To view Credentials You have to sign into your password locker account")
         if authenticate():
          if display():
             print("Your accounts and their credentials:")
             for cred in Credentials.show_all_accounts():
-              print("--"*10)
+              print("--"*15)
               print(f'ACCOUNT-NAME {cred.account_name}\n User-Name {cred.account_username}\n Password {cred.account_password}')
+              print("--"*15)
          else:
             print("No Existing accounts Found")
             print("*"*10)
@@ -72,10 +73,12 @@ def main():
           print("You cannot view saved credentials")
       elif short_code == "ac":
         print("Add An Account")
-        acc_name = input("\tAccount Name")
-        acc_user = input("\tUser_name")
-        acc_pass = input("\tPassword")
-        print(f"\t{acc_name} Added Successfully")
+        acc_name = input("\tAccount Name:\t")
+        acc_user = input("\tUser_name:\t")
+        acc_pass = input("\tPassword:\t")
+        add_media(acc_name,acc_user,acc_pass)
+        print(f"\t{acc_name} Account Added Successfully")
+        print("x"*15)
         
           
       
@@ -85,14 +88,23 @@ def main():
         acc_user = input("\tUsername:\t")
         acc_pass = Random_password.generate()
         add_media(acc_name,acc_user,acc_pass)
+        print(f"\t{acc_name} Added Successfully")
+        print("x"*15)
+        
 
       elif short_code == "del":
         print("To Delete, Authentication to password locker is needed")
         if authenticate():
           acc_to_delete = input("\tAccount to delete\t:")
-          deleteAccount(acc_to_delete)
+          if deleteAccount(acc_to_delete):
+            print(f"{acc_to_delete} Deleted")
+            print("x"*15)
+          else:
+            print(f"{acc_to_delete} Not Found")
+            print("x"*15)
         else:
           print("Woops! Login Details don't match\n Access to delete Denied")
+          print("x"*15)
         
 
       else:
@@ -100,6 +112,8 @@ def main():
         print("\tIt was nice having you")
         break
 
-main()
+
+if __name__ == "__main__":
+  main()
 
 
