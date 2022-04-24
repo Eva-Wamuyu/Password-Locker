@@ -3,7 +3,7 @@ class Credentials:
   '''
   Holding and creating instances of credentials
   Args:
-  Account Usename and Password
+  Account Username and Password
   '''
 
   all_accounts = []
