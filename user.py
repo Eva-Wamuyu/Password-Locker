@@ -1,6 +1,6 @@
 class User:
   '''
-  User Class that will be used to manage users who create login accounts
+  User Class that will be used to manage user account
   
   Arguments: username and password
   '''
