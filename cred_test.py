@@ -1,5 +1,3 @@
-
-from curses.ascii import CR
 import unittest
 from credentials import Credentials
 class testCreds(unittest.TestCase):
@@ -8,6 +6,9 @@ class testCreds(unittest.TestCase):
   '''
 
   def setUp(self):
+      '''
+      The record placed here will be available in all parts of the test class
+      '''
       self.new_acc = Credentials("Reddit","@ev","a1234")
   
   def test_credential_init(self):
