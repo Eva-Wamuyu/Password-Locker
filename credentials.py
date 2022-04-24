@@ -29,7 +29,11 @@ class Credentials:
   @classmethod
   def delete_credential(cls, the_name):
     get_acc_with_name = cls.search_Acc(the_name)
-    cls.all_accounts.remove(get_acc_with_name)
+    if(get_acc_with_name):
+     cls.all_accounts.remove(get_acc_with_name)
+    else:
+      return False
+
 
 
 

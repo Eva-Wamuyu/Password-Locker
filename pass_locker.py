@@ -4,7 +4,6 @@ from user import User
 from credentials import Credentials
 
 Random_password = PasswordGenerator()
-# print(passWord.generate())
 
 def create_user_acc(their_name, their_pass):
   '''
@@ -93,7 +92,7 @@ def main():
           acc_to_delete = input("\tAccount to delete\t:")
           deleteAccount(acc_to_delete)
         else:
-          print("Woops! Credentials don't match\n Access to delete Denied")
+          print("Woops! Login Details don't match\n Access to delete Denied")
         
 
       else:
