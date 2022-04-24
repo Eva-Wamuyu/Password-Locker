@@ -30,6 +30,7 @@ class UserTest(unittest.TestCase):
     self.new_user.add_user()
     self.assertEqual(len(User.all_users),1)
 
+ 
 
 
 if __name__ == '__main__':

@@ -1,4 +1,5 @@
 
+from curses.ascii import CR
 import unittest
 from credentials import Credentials
 class testCreds(unittest.TestCase):
@@ -45,6 +46,12 @@ class testCreds(unittest.TestCase):
     another_acc.add_credential()
     found_credential = Credentials.search_Acc("Tumblr")
     self.assertEqual(another_acc, found_credential)
+  
+  def test_show_all_acc(self):
+    '''
+    test the display method
+    '''
+    self.assertEqual(Credentials.all_accounts, Credentials.show_all_accounts())
     
     
 
