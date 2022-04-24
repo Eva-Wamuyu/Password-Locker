@@ -12,6 +12,9 @@ class testCreds(unittest.TestCase):
       self.new_acc = Credentials("Reddit","@ev","a1234")
   
   def test_credential_init(self):
+    '''
+    Asset initialzation of the credentials class
+    '''
     self.assertEqual(self.new_acc.account_name, "Reddit")
     self.assertEqual(self.new_acc.account_username, "@ev")
     self.assertEqual(self.new_acc.account_password, "a1234")
