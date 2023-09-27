@@ -10,6 +10,7 @@ The steps are as shown.
 ```
 git clone https://github.com/Eva-Wamuyu/Password-Locker
 cd Password-Locker
+create a virtual environment and install the requirements in the requirements.txt file
 chmod +x pass_locker.py
 ./pass_locker.py
 
